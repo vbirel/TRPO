@@ -11,7 +11,7 @@
       <object class="GtkLabel" id="Label">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="label" translatable="yes">Hello, it's Kudryashow and Shagin!</property>
+        <property name="label" translatable="yes">Hello, it's Shagin!</property>
       </object>
     </child>
   </object>
