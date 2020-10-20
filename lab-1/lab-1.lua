@@ -1,3 +1,4 @@
+--Зделоно Кудряшовым М. С.
 lgi = require 'lgi' 
 
 gtk = lgi.Gtk
