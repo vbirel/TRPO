@@ -12,7 +12,8 @@ prov:load_from_path('BlueColor.css')
 
 ctx = gtk.StyleContext()
 scr = gdk.Screen.get_default()
-ctx.add_provider_for_screen(scr,prov,gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+ctx.add_provider_for_screen(scr,prov,
+gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
 ui = bld.objects
 
