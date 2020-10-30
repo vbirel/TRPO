@@ -16,7 +16,7 @@ function ui.btnAdd:on_clicked(...)
     value = tonumber(ui.txtValue.text)
     pafOfPix = ui.txtPafOfPix.text
 
-    px = pixbuf.new_from_file( pafOfPix + '.png')
+    px = pixbuf.new_from_file( 'apple.png' )
     
     i = ui.mdl_items:append()
     
