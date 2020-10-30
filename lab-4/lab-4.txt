@@ -1,2 +1,2 @@
-asdasjhtyhfirst    1     apple.png
-seckond    2     cherry.png
+Михаил-------------1---------cherry.png
+Александр Валерьевич-------------2---------grapes.png
