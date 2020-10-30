@@ -126,13 +126,12 @@
           <object class="GtkScrolledWindow">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="margin_bottom">238</property>
             <property name="shadow_type">in</property>
             <child>
               <object class="GtkTreeView" id="lstItems">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="margin_bottom">322</property>
+                <property name="margin_top">20</property>
                 <property name="model">mdl_items</property>
                 <child internal-child="selection">
                   <object class="GtkTreeSelection"/>

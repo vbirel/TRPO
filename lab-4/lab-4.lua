@@ -1,6 +1,7 @@
 
 lgi = require 'lgi'
 
+gdk = lgi.Gdk
 gtk = lgi.Gtk
 pixbuf = lgi.GdkPixbuf.Pixbuf
 
@@ -9,6 +10,15 @@ gtk.init()
 bld = gtk.Builder()
 bld:add_from_file('lab-4.glade')
 
+prov = gtk.CssProvider()
+prov:load_from_path('BlueColor.css')
+
+ctx = gtk.StyleContext()
+scr = gdk.Screen.get_default()
+ctx.add_provider_for_screen(scr,prov,
+gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+
 ui = bld.objects
 
 function ui.btnAdd:on_clicked(...)
@@ -16,7 +26,7 @@ function ui.btnAdd:on_clicked(...)
     value = tonumber(ui.txtValue.text)
     pafOfPix = ui.txtPafOfPix.text
 
-    px = pixbuf.new_from_file( 'apple.png' )
+    px = pixbuf.new_from_file( pafOfPix )
     
     i = ui.mdl_items:append()
     
