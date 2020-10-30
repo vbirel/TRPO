@@ -2,10 +2,16 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <!-- interface-css-provider-path BlueColor.css -->
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">list-add</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">document-save</property>
   </object>
   <object class="GtkListStore" id="mdl_items">
     <columns>
@@ -39,6 +45,9 @@
                 <property name="can_focus">False</property>
                 <property name="halign">end</property>
                 <property name="label" translatable="yes">Name:</property>
+                <style>
+                  <class name="sky"/>
+                </style>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -51,6 +60,9 @@
                 <property name="can_focus">False</property>
                 <property name="halign">end</property>
                 <property name="label" translatable="yes">Value:</property>
+                <style>
+                  <class name="sky"/>
+                </style>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -94,6 +106,9 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">pix name (onli .png)</property>
+                <style>
+                  <class name="sky"/>
+                </style>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -109,12 +124,36 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="btnAdd">
-            <property name="label" translatable="yes">Add item</property>
+          <object class="GtkGrid">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">image1</property>
+            <property name="can_focus">False</property>
+            <property name="column_homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="btnAdd">
+                <property name="label" translatable="yes">Add item</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image1</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btnSave">
+                <property name="label" translatable="yes">Save list</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image2</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -131,7 +170,6 @@
               <object class="GtkTreeView" id="lstItems">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="margin_top">20</property>
                 <property name="model">mdl_items</property>
                 <child internal-child="selection">
                   <object class="GtkTreeSelection"/>

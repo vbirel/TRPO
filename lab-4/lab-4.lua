@@ -21,17 +21,42 @@ gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
 ui = bld.objects
 
-function ui.btnAdd:on_clicked(...)
-    name = ui.txtName.text
-    value = tonumber(ui.txtValue.text)
-    pafOfPix = ui.txtPafOfPix.text
+local wraitOnfail
+nameOfFail = 'lab-4.txt'
 
-    px = pixbuf.new_from_file( pafOfPix )
+local cn = 0
+name = {}
+value = {}
+pafOfPix = {}
+
+function ui.btnAdd:on_clicked(...)
+    cn = cn+1
+    
+    name[cn] = ui.txtName.text
+    value[cn] = tonumber(ui.txtValue.text)
+    pafOfPix[cn] = ui.txtPafOfPix.text
+
+    px = pixbuf.new_from_file( pafOfPix[cn] )   
     
     i = ui.mdl_items:append()
+    ui.mdl_items[i]={ [1] = name[cn], [2] = value[cn], [3] = px }
+
     
-    ui.mdl_items[i]={ [1] = name, [2] = value, [3] = px }
 end
+
+function ui.btnSave:on_clicked(...)
+    wraitOnfail = io.open(nameOfFail,'w')
+
+    for i = 1, cn do
+        wraitOnfail:write(name[i], '-------------',
+        value[i], '---------', pafOfPix[i], '\n')
+    end   
+   
+    wraitOnfail:close()
+end
+
+
+
 
 rdr_txt = gtk.CellRendererText {}
 rdr_pix = gtk.CellRendererPixbuf {}
