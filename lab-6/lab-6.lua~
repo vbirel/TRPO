@@ -1,0 +1,10 @@
+lgi = require 'lgi' 
+sqlite = require 'lsqlite3'
+
+gtk = lgi.Gtk
+pixbuf = lgi.GtkPixbuf.Pixbuf
+
+gtk.init()
+
+bld = gtk.Builder()
+bld:add_from_file('lab-6.glade)
